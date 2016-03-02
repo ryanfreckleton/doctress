@@ -21,6 +21,11 @@ but can be specified with ``-o``.
 
 Input file can also be set to ``-`` to read from ``stdin``.
 
+Installation
+============
+Requirements
+------------
+
 Features
 ========
  - Multi-lingual (Python, C, any source code)
@@ -62,6 +67,13 @@ It may be useful in the future to automatically set tabstops and/or do
 something like `elastic tabstops`_.
 
 .. _elastic tabstops: http://nickgravgaard.com/elastic-tabstops/
+
+Requirements
+============
+Compatibility
+=============
+License
+=======
 
 Questions
 =========
@@ -124,3 +136,6 @@ make.
 - http://termie.pbworks.com/w/page/20571923/SprinklesPy
 - http://docs.openstack.org/developer/stevedore/patterns_loading.html
 - http://stackoverflow.com/questions/932069/building-a-minimal-plugin-architecture-in-python
+
+Authors
+=======
