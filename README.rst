@@ -19,6 +19,8 @@ Usage
 Run dapper on the rst file ``<inputfile>`` by default output goes on stdout,
 but can be specified with ``-o``.
 
+Input file can also be set to ``-`` to read from ``stdin``.
+
 Features
 ========
  - Multi-lingual (Python, C, any source code)
@@ -29,7 +31,6 @@ Features
 The code (in ``file.code``) is broken into blocks such that::
 
     ### Block Name
-
     Code goes here
 
 Then that's picked up by the directive::
@@ -54,7 +55,13 @@ following four statements are equivalent::
     ###       Block ##
     ###    Block     ########
 
-This directive automatically dedents the code to minimize its size.
+This directive automatically dedents the code to flow nicely with the rest of
+the document.
+
+It may be useful in the future to automatically set tabstops and/or do
+something like `elastic tabstops`_.
+
+.. _elastic tabstops: http://nickgravgaard.com/elastic-tabstops/
 
 Questions
 =========
@@ -89,16 +96,31 @@ Questions
 
 Architecture
 ============
+Dapper is built on top of docutils and doit. Docutils has a simple fundamental
+architecture:
+
 Docutils
 --------
 Parser
-~~~~~~
-Custom directives and roles.
-
+    Custom directives and roles.
 Transform
-~~~~~~~~~
-Combining information from different nodes into a more appropriate tree.
-
+    Combining information from different nodes into a more appropriate tree.
 Writer
-~~~~~~
-Outputting to a specific format
+    Outputting to a specific format
+
+doit
+----
+doit is used to handle dependency management and running against multiple
+files. It'll also be how to integrate into other tools.
+
+Plugins
+-------
+Not sure about plugins yet. Definitely should be pip installable and easy to
+make.
+
+- http://pluginbase.pocoo.org/
+- https://github.com/dexy/cashew
+- http://yapsy.sourceforge.net/
+- http://termie.pbworks.com/w/page/20571923/SprinklesPy
+- http://docs.openstack.org/developer/stevedore/patterns_loading.html
+- http://stackoverflow.com/questions/932069/building-a-minimal-plugin-architecture-in-python
