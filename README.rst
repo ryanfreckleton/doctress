@@ -1,6 +1,6 @@
-######
-Dapper
-######
+########
+Doctress
+########
 
 *Making documentation handsome.*
 
@@ -14,9 +14,9 @@ Usage
 =====
 ::
 
-    dapper <inputfile> [-o outfile]
+    doctress <inputfile> [-o outfile]
 
-Run dapper on the rst file ``<inputfile>`` by default output goes on stdout,
+Run doctress on the rst file ``<inputfile>`` by default output goes on stdout,
 but can be specified with ``-o``.
 
 Input file can also be set to ``-`` to read from ``stdin``.
@@ -108,7 +108,7 @@ Questions
 
 Architecture
 ============
-Dapper is built on top of docutils and doit. Docutils has a simple fundamental
+Doctress is built on top of docutils and doit. Docutils has a simple fundamental
 architecture:
 
 Docutils

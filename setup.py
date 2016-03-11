@@ -1,9 +1,9 @@
 import setuptools
 
 setuptools.setup(
-    name="dapper",
+    name="doctress",
     version="0.1.0",
-    url="https://github.com/ryanfreckleton/dapper",
+    url="https://github.com/ryanfreckleton/doctress",
 
     author="Ryan Freckleton",
     author_email="ryan.freckleton@gmail.com",
