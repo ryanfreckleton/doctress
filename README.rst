@@ -115,9 +115,28 @@ Docutils
 --------
 Parser
     Custom directives and roles.
+
+    Directive class
+        Inline
+        TextElement
+
+        attributes: Argument detaiils
+        Option names
+        Whether it has content
+
+        self.assert_has_content()
+        self.content
+        self.arguments
+        self.final_argument_whitespace
+
+        Node children?
+
+    Node class
+
 Transform
     Combining information from different nodes into a more appropriate tree.
 Writer
+    Translator?
     Outputting to a specific format
 
 doit
