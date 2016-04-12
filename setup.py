@@ -12,6 +12,9 @@ setuptools.setup(
     long_description=open('README.rst').read(),
 
     packages=setuptools.find_packages(),
+    entry_points = {
+        'console_scripts': ['doctress=doctress:cli'],
+    },
 
     install_requires=[],
 

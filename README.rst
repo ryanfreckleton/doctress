@@ -21,6 +21,13 @@ but can be specified with ``-o``.
 
 Input file can also be set to ``-`` to read from ``stdin``.
 
+Options
+-------
+
+::
+
+    doctress <inputfile> -t beamer [-o outfile]
+
 Installation
 ============
 Requirements

@@ -4,4 +4,21 @@ __version__ = '0.1.0'
 __author__ = 'Ryan Freckleton <ryan.freckleton@gmail.com>'
 __all__ = []
 
-# Doctress command
+import sys
+
+import click
+
+import docutils
+from docutils.parsers.rst import directives
+from docutils.writers.html4css1 import Writer
+
+import pycon
+
+@click.command()
+@click.argument('input', type=click.File('rb'))
+@click.argument('outfile', type=click.File('wb'), default=sys.stdout)
+def cli(input, outfile):
+    directives.register_directive('pycon', pycon.PyconDirective)
+    html_writer = Writer
+    output = docutils.core.publish_string(input.read())
+    outfile.write(output)
