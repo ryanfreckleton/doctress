@@ -97,7 +97,7 @@ BEAMER_SPEC =   (
                 ['--fragile-default'],
                 {'default': True, }
             ),
-            
+
             (
                 'Center figures.  All includegraphics statements will be put '
                 'inside center environments.',
@@ -1278,34 +1278,3 @@ class BeamerWriter (Latex2eWriter):
             self.settings_defaults.update(BEAMER_DEFAULTS)
             Latex2eWriter.__init__(self)
             self.translator_class = BeamerTranslator
-
-
-### TEST & DEBUG ###
-# TODO: should really move to a test file or dir
-
-def test_with_file (fpath, args=[]):
-    """
-    Call rst2beamer on the given file with the given args.
-
-    During development, it's handy to be able to easily call the writer from
-    within Python. This is a convenience function that wraps the docutils
-    functions to do so.
-    """
-    return publish_cmdline (writer=BeamerWriter(), argv=args+[fpath])
-
-
-### MAIN ###
-
-def main ():
-    description = (
-        "Generates Beamer-flavoured LaTeX for PDF-based presentations." +
-         default_description)
-    publish_cmdline (writer=BeamerWriter(), description=description)
-
-
-if __name__ == '__main__':
-    main()
-
-
-### END ###
-

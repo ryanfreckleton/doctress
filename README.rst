@@ -3,6 +3,10 @@ Doctress
 ########
 
 *Making documentation handsome.*
+*Mingle code and documentation*
+*Documentation for humans*
+*Low-carb documentation and presentations*
+*Beautiful documentation, organized code*
 
 Inspired by the idio plugin of dexy, this is toolset built on RestructuredText
 to allow for a type of "trap door" literate programming and documentation.

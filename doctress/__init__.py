@@ -13,12 +13,13 @@ from docutils.parsers.rst import directives
 from docutils.writers.html4css1 import Writer
 
 import pycon
+import html5
 
 @click.command()
 @click.argument('input', type=click.File('rb'))
 @click.argument('outfile', type=click.File('wb'), default=sys.stdout)
 def cli(input, outfile):
     directives.register_directive('pycon', pycon.PyconDirective)
-    html_writer = Writer
-    output = docutils.core.publish_string(input.read())
+    writer = html5.Writer()
+    output = docutils.core.publish_string(input.read(), writer=writer)
     outfile.write(output)

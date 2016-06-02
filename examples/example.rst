@@ -2,6 +2,9 @@
 Test
 ####
 
+The Interactive Prompt
+======================
+
 .. pycon:: hello.py
 
 .. pycon::
