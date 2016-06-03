@@ -14,12 +14,15 @@ from docutils.writers.html4css1 import Writer
 
 import pycon
 import html5
+import rst2beamer
+
+writers = dict(beamer=rst2beamer.BeamerWriter(), html=html5.Writer())
 
 @click.command()
 @click.argument('input', type=click.File('rb'))
 @click.argument('outfile', type=click.File('wb'), default=sys.stdout)
-def cli(input, outfile):
+@click.option('-t', default='html', type=click.Choice(writers.keys()), help='output type')
+def cli(input, outfile, t):
     directives.register_directive('pycon', pycon.PyconDirective)
-    writer = html5.Writer()
-    output = docutils.core.publish_string(input.read(), writer=writer)
+    output = docutils.core.publish_string(input.read(), writer=writers[t])
     outfile.write(output)
