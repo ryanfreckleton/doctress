@@ -12,6 +12,7 @@ import docutils
 from docutils.parsers.rst import directives
 from docutils.writers.html4css1 import Writer
 
+import see
 import pycon
 import html5
 import rst2beamer
@@ -24,5 +25,6 @@ writers = dict(beamer=rst2beamer.BeamerWriter(), html=html5.Writer())
 @click.option('-t', default='html', type=click.Choice(writers.keys()), help='output type')
 def cli(input, outfile, t):
     directives.register_directive('pycon', pycon.PyconDirective)
+    directives.register_directive('see', see.SeeDirective)
     output = docutils.core.publish_string(input.read(), writer=writers[t])
     outfile.write(output)
