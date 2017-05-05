@@ -74,7 +74,7 @@ span.docutils.literal {
   font-family: monospace;
   white-space: pre-wrap;
 }
-/* do not wraph at hyphens and similar: */
+/* do not wrap at hyphens and similar: */
 .literal > span.pre { white-space: nowrap; }
 
 /* Lists */
@@ -109,7 +109,7 @@ dt span.classifier:before {
   content: ":";
 }
 
-/* Field Lists and drivatives */
+/* Field Lists and derivatives */
 /* bold field name, content starts on the same line */
 dl.field-list > dt,
 dl.option-list > dt,

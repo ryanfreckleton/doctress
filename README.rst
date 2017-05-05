@@ -131,7 +131,7 @@ Parser
         Inline
         TextElement
 
-        attributes: Argument detaiils
+        attributes: Argument details
         Option names
         Whether it has content
 

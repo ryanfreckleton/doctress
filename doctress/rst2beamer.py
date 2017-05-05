@@ -15,7 +15,7 @@ See <http:www.agapow.net/software/rst2beamer> for more details.
 
 """
 # TODO: modifications for handout sections?
-# TOOD: sections and subsections?
+# TODO: sections and subsections?
 # TODO: convert document metadata to front page fields?
 # TODO: toc-conversion?
 # TODO: fix descriptions
@@ -320,7 +320,7 @@ def node_lang_class (node):
 
     :Returns:
         A string giving a language abbreviation (e.g. 'py') or None if no
-        langauge is found.
+        language is found.
 
     Some sourcecode containers can pass a (programming) language specification
     by passing it via a classname like 'lang-py'. This function searches a
@@ -383,7 +383,7 @@ def has_sub_sections (node):
 
 def string_to_bool (stringin, default=True):
     """
-    Turn a commandline arguement string into a boolean value.
+    Turn a commandline argument string into a boolean value.
     """
     if type (stringin) == bool:
         return stringin
@@ -426,7 +426,7 @@ def get_lexer (text, lang):
             The sourcecode to be lexed for highlighting. This is analysed if
             the language is 'guess'.
         lang
-            An abbreviation for the programming langauge of the code. Can be
+            An abbreviation for the programming language of the code. Can be
             any 'name' accepted by Pygments, including 'none' (plain text) or
             'guess' (analyse the passed code for clues).
 
@@ -498,8 +498,8 @@ class CodeBlockDirective (Directive):
     }
 
     def run (self):
-        # extract langauge from block or commandline
-        # we allow the langauge specification to be optional
+        # extract language from block or commandline
+        # we allow the language specification to be optional
         try:
             language = self.arguments[0]
         except IndexError:
@@ -1093,7 +1093,7 @@ class BeamerTranslator (LaTeXTranslator):
             self.out.append ( '\\setbeamerfont{quote}{parent=quotation}\n' )
 
     def visit_codeblock (self, node):
-        # was langauge argument defined on node?
+        # was language argument defined on node?
         lang =  node.get ('language', None)
         # otherwise, was it defined in node classes?
         if (lang is None):
